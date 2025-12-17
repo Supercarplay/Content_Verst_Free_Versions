@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Элементы решения/">
+    <File Path="x64/Debug/Database_Login.accdb" />
+  </Folder>
+  <Project Path="Content_Verst_Update/Updater.csproj" Id="9ae0e156-837c-4eea-bfe3-e9e2faea133c" />
+  <Project Path="Project/Project.vcxproj" />
+</Solution>
