@@ -12,10 +12,10 @@ System::Void Project::MyForm::LoadSettings() {
 			String^ Settingsquery = "SELECT [Visible_Data], [Visible_Name], [Visible_About], [Visible_Text], [Visible_Scences],"
 				"[Visible_Media], [has_Approved], [End_Word] "
 				"FROM UserSettings WHERE [ID_Users] = @ID";
-			SqlCommand^ Settingscmd = gcnew SqlCommand(Settingsquery, DBconnection);
+			OleDbCommand^ Settingscmd = gcnew OleDbCommand(Settingsquery, DBconnection);
 			Settingscmd->Parameters->AddWithValue("@ID", currentUserId.Value);
 
-			SqlDataReader^ readerSettings = Settingscmd->ExecuteReader();
+			OleDbDataReader^ readerSettings = Settingscmd->ExecuteReader();
 			if (readerSettings->Read()) {
 				//Основная таблица
 				Date_post->Visible = Convert::ToBoolean(readerSettings["Visible_Data"]);
@@ -60,12 +60,12 @@ System::Void Project::MyForm::BtnSaveSettings_Click(System::Object^ sender, Syst
 
 	try {
 		String^ updateQuery = "UPDATE Login SET [ID_Group] = @ID_Group WHERE [ID] = @ID";
-		SqlCommand^ cmd = gcnew SqlCommand(updateQuery, DBconnection);
+		OleDbCommand^ cmd = gcnew OleDbCommand(updateQuery, DBconnection);
 		cmd->Parameters->AddWithValue("@ID", currentUserId.Value);
 		cmd->ExecuteNonQuery();
 
 		String^ checkQuery = "SELECT COUNT(*) FROM UserSettings WHERE [ID_Users] = @UserID";
-		SqlCommand^ checkCmd = gcnew SqlCommand(checkQuery, DBconnection);
+		OleDbCommand^ checkCmd = gcnew OleDbCommand(checkQuery, DBconnection);
 		checkCmd->Parameters->AddWithValue("@UserID", currentUserId.Value);
 		int count = safe_cast<int>(checkCmd->ExecuteScalar());
 
@@ -91,7 +91,7 @@ System::Void Project::MyForm::BtnSaveSettings_Click(System::Object^ sender, Syst
 							"@Visible_Text, @Visible_Scences, @Visible_Media, @End_Word)";
 		}
 
-		SqlCommand^ SettingsCmd = gcnew SqlCommand(SettingsQuery, DBconnection);
+		OleDbCommand^ SettingsCmd = gcnew OleDbCommand(SettingsQuery, DBconnection);
 		SettingsCmd->Parameters->AddWithValue("@UserID", currentUserId.Value);
 		SettingsCmd->Parameters->AddWithValue("@Visible_Data", CheckVisibleColums->GetItemChecked(0));
 		SettingsCmd->Parameters->AddWithValue("@Visible_Name", CheckVisibleColums->GetItemChecked(1));

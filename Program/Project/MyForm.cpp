@@ -73,14 +73,6 @@ System::Void Project::MyForm::MyForm_Resize(System::Object^ sender, System::Even
 }
 
 //
-//	Таймер
-//
-System::Void Project::MyForm::OnRefreshTimerTick(System::Object^ sender, System::EventArgs^ e) {
-	MyForm_Load(sender, e);
-	LoadSettings();
-}
-
-//
 //	Окно покупки
 //
 System::Void Project::MyForm::BtnClose_buy_wind_Click(System::Object^ sender, System::EventArgs^ e) {

@@ -8,10 +8,11 @@ using namespace System;
 //
 System::Void Project::MyForm::Save_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		String^ insertQuery = "INSERT INTO TablePost ([Users_ID], [Date_post], [name_post], [About_post], [Text_post], [Scencens_post], [ViewMedia_post], [Files]) "
-			"VALUES (@Users_ID, @Date_post, @name_post, @About_post, @Text_post, @Scencens_post, @ViewMedia_post, @Files)";
+		String^ insertQuery = "INSERT INTO TablePost "
+			"(Users_ID, Date_post, name_post, About_post, Text_post, Scencens_post, ViewMedia_post, Files) "
+			"VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
-		SqlCommand^ cmd = gcnew SqlCommand(insertQuery, DBconnection);
+		OleDbCommand^ cmd = gcnew OleDbCommand(insertQuery, DBconnection);
 		if (currentUserId.HasValue) {
 			cmd->Parameters->AddWithValue("@Users_ID", currentUserId.Value);
 		}
@@ -94,33 +95,18 @@ System::Void Project::MyForm::Save_button_Click(System::Object^ sender, System::
 //
 System::Void Project::MyForm::Save_editbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	try {
-		String^ updateQuery;
-		if (isEditingFromArchive) {
-			updateQuery = "UPDATE TablePost SET " +
-				"[Date_post] = @Date_post, " +
-				"[name_post] = @name_post, " +
-				"[About_post] = @About_post, " +
-				"[Text_post] = @Text_post, " +
-				"[Scencens_post] = @Scencens_post, " +
-				"[ViewMedia_post] = @ViewMedia_post, " +
-				"[Files] = @Files" +
-				"WHERE [ID] = @ID";
-		}
-		else {
-			updateQuery = "UPDATE TablePost SET " +
-				"[Date_post] = @Date_post, " +
-				"[name_post] = @name_post, " +
-				"[About_post] = @About_post, " +
-				"[Text_post] = @Text_post, " +
-				"[Scencens_post] = @Scencens_post, " +
-				"[ViewMedia_post] = @ViewMedia_post, " +
-				"[Files] = @Files" +
-				"WHERE [ID] = @ID";
-		}
+		String^ updateQuery = "UPDATE TablePost SET "
+			"Date_post = ?, "
+			"name_post = ?, "
+			"About_post = ?, "
+			"Text_post = ?, "
+			"Scencens_post = ?, "
+			"ViewMedia_post = ?, "
+			"Files = ? "
+			"WHERE ID = ?";
 
 
-
-		SqlCommand^ cmd = gcnew SqlCommand(updateQuery, DBconnection);
+		OleDbCommand^ cmd = gcnew OleDbCommand(updateQuery, DBconnection);
 		DateTime selectedDate = dateTimePicker_Editpost->Value;
 		DateTime selectedTime = TimePicker_Editpost->Value;
 		//	Файловая система

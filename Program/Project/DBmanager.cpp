@@ -30,17 +30,17 @@ System::Void Project::MyForm::MyForm_Load(System::Object^ sender, System::EventA
 	}
 
 	String^ query;
-	SqlCommand^ command;
+	OleDbCommand^ command;
 	query = "SELECT [ID], [Date_post], [name_post], [About_post], [Text_post], [Scencens_post], [ViewMedia_post], [Files], [Approved] "
 		"FROM TablePost WHERE [Published] = 0 AND [Users_ID] = @UserID ORDER BY [Date_post]";
-	command = gcnew SqlCommand(query, DBconnection);
+	command = gcnew OleDbCommand(query, DBconnection);
 	if (currentUserId.HasValue) {
 		command->Parameters->AddWithValue("@UserID", currentUserId.Value);
 	}
 	else {
 		command->Parameters->AddWithValue("@UserID", DBNull::Value);
 	}
-	SqlDataAdapter^ adapter = gcnew SqlDataAdapter(command);
+	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(command);
 	DataTable^ dataTable = gcnew DataTable();
 
 	adapter->Fill(dataTable);
@@ -192,7 +192,7 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 				String^ fileNameDelete = Convert::ToString(Table_post->Rows[e->RowIndex]->Cells["Files_post"]->Value);
 				String^ destServer = System::IO::Path::Combine(serverDir, fileNameDelete);
 				String^ deleteQuery = "DELETE FROM TablePost WHERE [ID] = @ID";
-				SqlCommand^ cmd = gcnew SqlCommand(deleteQuery, DBconnection);
+				OleDbCommand^ cmd = gcnew OleDbCommand(deleteQuery, DBconnection);
 				int idToDelete = Convert::ToInt32(Table_post->Rows[e->RowIndex]->Cells["ID"]->Value);
 				cmd->Parameters->AddWithValue("@ID", idToDelete);
 				if (System::IO::File::Exists(destServer)) {

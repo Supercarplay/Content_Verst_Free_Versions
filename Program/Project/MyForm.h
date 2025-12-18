@@ -7,7 +7,7 @@ namespace Project {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace System::Data::SqlClient;
+	using namespace System::Data::OleDb;
 
 	/// <summary>
 	/// Сводка для MyForm
@@ -17,13 +17,11 @@ namespace Project {
 
 	public:
 		static String^ connectString =
-			"Server=;"  
-			"Database=;"
-			"User Id=;"
-			"Password=;"
-			"Encrypt=False;";
+			"Provider=Microsoft.ACE.OLEDB.12.0;"
+			"Data Source=C:\\Путь\\К\\Базе.accdb;"
+			"Persist Security Info=False;";
 	private:
-		SqlConnection^ DBconnection;
+		OleDbConnection^ DBconnection;
 		int currentEditPostID;
 		Nullable<int> currentUserId;
 		Nullable<int> currentTelegramID;
@@ -117,9 +115,6 @@ namespace Project {
 		System::Void Add_bot_settings_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnClose_buy_wind_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BTN_Buy_Click(System::Object^ sender, System::EventArgs^ e);
-		//Таймер обновления БД
-		System::Windows::Forms::Timer^ refreshTimer;
-		System::Void OnRefreshTimerTick(System::Object^ sender, System::EventArgs^ e);
 		//Удаление файлов
 		System::Void DeleteFile_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void DeleteEditFiles_Click(System::Object^ sender, System::EventArgs^ e);
@@ -135,7 +130,7 @@ namespace Project {
 		{
 			InitializeComponent();
 
-			DBconnection = gcnew SqlConnection(connectString);
+			DBconnection = gcnew OleDbConnection(connectString);
 
 			ReturnArchive->Visible = false;
 
@@ -158,11 +153,6 @@ namespace Project {
 				Application::Exit();
 				return;
 			}
-
-			refreshTimer = gcnew System::Windows::Forms::Timer();
-			refreshTimer->Interval = 10000; // 10 секунд
-			refreshTimer->Tick += gcnew System::EventHandler(this, &MyForm::OnRefreshTimerTick);
-			refreshTimer->Start();
 		}
 	protected:
 		/// <summary>
