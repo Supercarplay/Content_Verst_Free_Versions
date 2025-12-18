@@ -126,13 +126,13 @@
     <value>Times New Roman, 10pt</value>
   </data>
   <data name="button_New_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>436, 16</value>
+    <value>561, 20</value>
   </data>
   <data name="button_New_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>6, 6, 6, 6</value>
+    <value>8, 8, 8, 8</value>
   </data>
   <data name="button_New_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 42</value>
+    <value>195, 53</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button_New_post.TabIndex" type="System.Int32, mscorlib">
@@ -166,10 +166,13 @@
     <value>NoControl</value>
   </data>
   <data name="Name_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 41</value>
+    <value>105, 52</value>
+  </data>
+  <data name="Name_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Name_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 19</value>
+    <value>90, 22</value>
   </data>
   <data name="Name_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -187,7 +190,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Name_new_post.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="Textbox_Name_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -196,13 +199,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="Textbox_Name_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 78</value>
+    <value>39, 99</value>
+  </data>
+  <data name="Textbox_Name_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Textbox_Name_new_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Textbox_Name_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 74</value>
+    <value>251, 93</value>
   </data>
   <data name="Textbox_Name_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -217,7 +223,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Textbox_Name_new_post.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="About_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -232,10 +238,13 @@
     <value>NoControl</value>
   </data>
   <data name="About_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 42</value>
+    <value>396, 53</value>
+  </data>
+  <data name="About_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="About_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+    <value>95, 22</value>
   </data>
   <data name="About_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -253,7 +262,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;About_new_post.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="Textbox_About_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -262,13 +271,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="Textbox_About_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 78</value>
+    <value>321, 99</value>
+  </data>
+  <data name="Textbox_About_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Textbox_About_new_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Textbox_About_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 74</value>
+    <value>251, 93</value>
   </data>
   <data name="Textbox_About_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -283,7 +295,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Textbox_About_new_post.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="Date_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -298,10 +310,13 @@
     <value>NoControl</value>
   </data>
   <data name="Date_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 173</value>
+    <value>80, 219</value>
+  </data>
+  <data name="Date_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Date_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 19</value>
+    <value>135, 22</value>
   </data>
   <data name="Date_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -319,7 +334,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Date_new_post.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="Swith_date_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -331,10 +346,13 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="Swith_date_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 210</value>
+    <value>57, 266</value>
+  </data>
+  <data name="Swith_date_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Swith_date_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 21</value>
+    <value>142, 25</value>
   </data>
   <data name="Swith_date_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -349,7 +367,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Swith_date_new_post.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="view_media.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -364,10 +382,13 @@
     <value>NoControl</value>
   </data>
   <data name="view_media.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 173</value>
+    <value>392, 219</value>
+  </data>
+  <data name="view_media.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="view_media.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 19</value>
+    <value>101, 22</value>
   </data>
   <data name="view_media.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -385,13 +406,16 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;view_media.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="TimePicker_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 210</value>
+    <value>207, 266</value>
+  </data>
+  <data name="TimePicker_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="TimePicker_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
+    <value>82, 26</value>
   </data>
   <data name="TimePicker_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -406,13 +430,16 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;TimePicker_new_post.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="TimePicker_Editpost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 210</value>
+    <value>207, 266</value>
+  </data>
+  <data name="TimePicker_Editpost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="TimePicker_Editpost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 22</value>
+    <value>82, 26</value>
   </data>
   <data name="TimePicker_Editpost.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -427,7 +454,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;TimePicker_Editpost.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="Swith_view_media.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -445,10 +472,13 @@
     <value>Фото</value>
   </data>
   <data name="Swith_view_media.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 208</value>
+    <value>374, 263</value>
+  </data>
+  <data name="Swith_view_media.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Swith_view_media.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>154, 25</value>
   </data>
   <data name="Swith_view_media.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -466,7 +496,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Swith_view_media.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="Text_New_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -481,10 +511,13 @@
     <value>NoControl</value>
   </data>
   <data name="Text_New_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 42</value>
+    <value>705, 53</value>
+  </data>
+  <data name="Text_New_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Text_New_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
+    <value>58, 22</value>
   </data>
   <data name="Text_New_post.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -502,7 +535,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Text_New_post.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="Continuity_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -517,10 +550,13 @@
     <value>NoControl</value>
   </data>
   <data name="Continuity_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>801, 42</value>
+    <value>1030, 53</value>
+  </data>
+  <data name="Continuity_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Continuity_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+    <value>95, 22</value>
   </data>
   <data name="Continuity_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -538,7 +574,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Continuity_new_post.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="textBox_Text_New_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -547,13 +583,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="textBox_Text_New_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 78</value>
+    <value>616, 99</value>
+  </data>
+  <data name="textBox_Text_New_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBox_Text_New_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBox_Text_New_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 182</value>
+    <value>251, 230</value>
   </data>
   <data name="textBox_Text_New_post.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -568,7 +607,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;textBox_Text_New_post.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="textBox_Continuity_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -577,13 +616,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="textBox_Continuity_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 78</value>
+    <value>962, 99</value>
+  </data>
+  <data name="textBox_Continuity_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="textBox_Continuity_new_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="textBox_Continuity_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 182</value>
+    <value>251, 230</value>
   </data>
   <data name="textBox_Continuity_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -598,7 +640,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;textBox_Continuity_new_post.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="generation_text_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -607,10 +649,13 @@
     <value>NoControl</value>
   </data>
   <data name="generation_text_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>507, 269</value>
+    <value>652, 341</value>
+  </data>
+  <data name="generation_text_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="generation_text_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 37</value>
+    <value>174, 47</value>
   </data>
   <data name="generation_text_post.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -631,7 +676,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;generation_text_post.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="Generation_Continuity_new_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -640,10 +685,13 @@
     <value>NoControl</value>
   </data>
   <data name="Generation_Continuity_new_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>778, 269</value>
+    <value>1000, 341</value>
+  </data>
+  <data name="Generation_Continuity_new_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Generation_Continuity_new_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 37</value>
+    <value>174, 47</value>
   </data>
   <data name="Generation_Continuity_new_post.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -664,7 +712,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Generation_Continuity_new_post.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="Save_button.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -676,10 +724,13 @@
     <value>NoControl</value>
   </data>
   <data name="Save_button.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 357</value>
+    <value>537, 452</value>
+  </data>
+  <data name="Save_button.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Save_button.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 37</value>
+    <value>195, 47</value>
   </data>
   <data name="Save_button.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -697,7 +748,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;Save_button.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <metadata name="Panel_New_post.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -708,41 +759,17 @@
   <data name="Panel_New_post.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="CheckApproved.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="CheckApproved.Items" xml:space="preserve">
-    <value>Пост согласован</value>
-  </data>
-  <data name="CheckApproved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>644, 311</value>
-  </data>
-  <data name="CheckApproved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 21</value>
-  </data>
-  <data name="CheckApproved.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;CheckApproved.Name" xml:space="preserve">
-    <value>CheckApproved</value>
-  </data>
-  <data name="&gt;&gt;CheckApproved.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CheckApproved.Parent" xml:space="preserve">
-    <value>Panel_New_post</value>
-  </data>
-  <data name="&gt;&gt;CheckApproved.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="DeleteFile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="DeleteFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 311</value>
+    <value>548, 394</value>
+  </data>
+  <data name="DeleteFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="DeleteFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 25</value>
   </data>
   <data name="DeleteFile.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -763,7 +790,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;DeleteFile.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="linkFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -772,13 +799,16 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="linkFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 310</value>
+    <value>240, 393</value>
+  </data>
+  <data name="linkFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="linkFile.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>240, 19</value>
+    <value>309, 24</value>
   </data>
   <data name="linkFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
+    <value>147, 22</value>
   </data>
   <data name="linkFile.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -796,7 +826,7 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;linkFile.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="BtnAddFiles.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -805,10 +835,13 @@
     <value>NoControl</value>
   </data>
   <data name="BtnAddFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 303</value>
+    <value>57, 384</value>
+  </data>
+  <data name="BtnAddFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnAddFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>176, 42</value>
   </data>
   <data name="BtnAddFiles.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -826,13 +859,19 @@
     <value>Panel_New_post</value>
   </data>
   <data name="&gt;&gt;BtnAddFiles.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>18</value>
   </data>
   <data name="Panel_New_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 67</value>
+    <value>28, 85</value>
+  </data>
+  <data name="Panel_New_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="Panel_New_post.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Panel_New_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 415</value>
+    <value>1263, 526</value>
   </data>
   <data name="Panel_New_post.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -855,33 +894,6 @@
   <data name="Edit_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
   </data>
-  <data name="checkApprovedEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Times New Roman, 12pt</value>
-  </data>
-  <data name="checkApprovedEdit.Items" xml:space="preserve">
-    <value>Пост согласован</value>
-  </data>
-  <data name="checkApprovedEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>644, 311</value>
-  </data>
-  <data name="checkApprovedEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 21</value>
-  </data>
-  <data name="checkApprovedEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;checkApprovedEdit.Name" xml:space="preserve">
-    <value>checkApprovedEdit</value>
-  </data>
-  <data name="&gt;&gt;checkApprovedEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkApprovedEdit.Parent" xml:space="preserve">
-    <value>Edit_post</value>
-  </data>
-  <data name="&gt;&gt;checkApprovedEdit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="ReturnArchive.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -889,10 +901,13 @@
     <value>Times New Roman, 14pt</value>
   </data>
   <data name="ReturnArchive.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 15</value>
+    <value>482, 19</value>
+  </data>
+  <data name="ReturnArchive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="ReturnArchive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 21</value>
+    <value>253, 27</value>
   </data>
   <data name="ReturnArchive.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -910,16 +925,19 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;ReturnArchive.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="DeleteEditFiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="DeleteEditFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 298</value>
+    <value>548, 377</value>
+  </data>
+  <data name="DeleteEditFiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="DeleteEditFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 25</value>
   </data>
   <data name="DeleteEditFiles.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -937,7 +955,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;DeleteEditFiles.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="linkEditFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -949,13 +967,16 @@
     <value>NoControl</value>
   </data>
   <data name="linkEditFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 297</value>
+    <value>240, 376</value>
+  </data>
+  <data name="linkEditFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="linkEditFile.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>240, 19</value>
+    <value>309, 24</value>
   </data>
   <data name="linkEditFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
+    <value>147, 22</value>
   </data>
   <data name="linkEditFile.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -973,7 +994,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;linkEditFile.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="BtnEditFile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 12pt</value>
@@ -982,10 +1003,13 @@
     <value>NoControl</value>
   </data>
   <data name="BtnEditFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 290</value>
+    <value>57, 367</value>
+  </data>
+  <data name="BtnEditFile.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnEditFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>176, 42</value>
   </data>
   <data name="BtnEditFile.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -1003,7 +1027,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;BtnEditFile.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="Save_editbutton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1015,10 +1039,13 @@
     <value>NoControl</value>
   </data>
   <data name="Save_editbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>418, 357</value>
+    <value>537, 452</value>
+  </data>
+  <data name="Save_editbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Save_editbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 37</value>
+    <value>195, 47</value>
   </data>
   <data name="Save_editbutton.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1036,7 +1063,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;Save_editbutton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="Continuity_Edit_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1045,13 +1072,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="Continuity_Edit_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>748, 78</value>
+    <value>962, 99</value>
+  </data>
+  <data name="Continuity_Edit_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Continuity_Edit_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Continuity_Edit_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 182</value>
+    <value>251, 230</value>
   </data>
   <data name="Continuity_Edit_post.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1066,7 +1096,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;Continuity_Edit_post.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="text_Edit_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1075,13 +1105,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="text_Edit_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 78</value>
+    <value>616, 99</value>
+  </data>
+  <data name="text_Edit_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="text_Edit_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="text_Edit_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 182</value>
+    <value>251, 230</value>
   </data>
   <data name="text_Edit_post.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1096,7 +1129,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;text_Edit_post.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1111,10 +1144,13 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>801, 42</value>
+    <value>1030, 53</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+    <value>95, 22</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1132,7 +1168,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1147,10 +1183,13 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 42</value>
+    <value>705, 53</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 19</value>
+    <value>58, 22</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1168,7 +1207,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="View_media_Edit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1186,10 +1225,13 @@
     <value>Фото</value>
   </data>
   <data name="View_media_Edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 208</value>
+    <value>374, 263</value>
+  </data>
+  <data name="View_media_Edit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="View_media_Edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 23</value>
+    <value>154, 25</value>
   </data>
   <data name="View_media_Edit.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1207,7 +1249,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;View_media_Edit.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1222,10 +1264,13 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 173</value>
+    <value>392, 219</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 19</value>
+    <value>101, 22</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1243,7 +1288,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="dateTimePicker_Editpost.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1252,10 +1297,13 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="dateTimePicker_Editpost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 210</value>
+    <value>57, 266</value>
+  </data>
+  <data name="dateTimePicker_Editpost.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="dateTimePicker_Editpost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 21</value>
+    <value>142, 25</value>
   </data>
   <data name="dateTimePicker_Editpost.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1270,7 +1318,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;dateTimePicker_Editpost.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1285,10 +1333,13 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 173</value>
+    <value>80, 219</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 19</value>
+    <value>135, 22</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1306,7 +1357,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="About_Edit_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1315,13 +1366,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="About_Edit_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 78</value>
+    <value>321, 99</value>
+  </data>
+  <data name="About_Edit_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="About_Edit_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="About_Edit_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 74</value>
+    <value>251, 93</value>
   </data>
   <data name="About_Edit_post.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1336,7 +1390,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;About_Edit_post.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1351,10 +1405,13 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 42</value>
+    <value>396, 53</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 19</value>
+    <value>95, 22</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1372,7 +1429,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="Name_Edit_post.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1381,13 +1438,16 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="Name_Edit_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 78</value>
+    <value>39, 99</value>
+  </data>
+  <data name="Name_Edit_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Name_Edit_post.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="Name_Edit_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 74</value>
+    <value>251, 93</value>
   </data>
   <data name="Name_Edit_post.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1402,7 +1462,7 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;Name_Edit_post.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top</value>
@@ -1417,10 +1477,13 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 42</value>
+    <value>105, 53</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 19</value>
+    <value>90, 22</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1438,13 +1501,19 @@
     <value>Edit_post</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>17</value>
   </data>
   <data name="Edit_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 71</value>
+    <value>28, 90</value>
+  </data>
+  <data name="Edit_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="Edit_post.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Edit_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>982, 410</value>
+    <value>1263, 519</value>
   </data>
   <data name="Edit_post.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1476,11 +1545,23 @@
   <data name="ID.HeaderText" xml:space="preserve">
     <value>ID</value>
   </data>
+  <data name="ID.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="ID.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="ID.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="Date_post.HeaderText" xml:space="preserve">
     <value>Дата</value>
+  </data>
+  <data name="Date_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Date_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="name_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1488,11 +1569,23 @@
   <data name="name_post.HeaderText" xml:space="preserve">
     <value>Название</value>
   </data>
+  <data name="name_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="name_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="About_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="About_post.HeaderText" xml:space="preserve">
     <value>Описание</value>
+  </data>
+  <data name="About_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="About_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="Text_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1500,11 +1593,23 @@
   <data name="Text_post.HeaderText" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="Text_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Text_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="Scencens_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="Scencens_post.HeaderText" xml:space="preserve">
     <value>Сценарий</value>
+  </data>
+  <data name="Scencens_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="Scencens_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="ViewMedia_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1512,14 +1617,26 @@
   <data name="ViewMedia_post.HeaderText" xml:space="preserve">
     <value>Медиа</value>
   </data>
+  <data name="ViewMedia_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ViewMedia_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="Files_post.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="Files_post.HeaderText" xml:space="preserve">
     <value>Files_post</value>
   </data>
+  <data name="Files_post.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="Files_post.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="Files_post.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="IsAprroved.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1527,8 +1644,14 @@
   <data name="IsAprroved.HeaderText" xml:space="preserve">
     <value>IsAprroved</value>
   </data>
+  <data name="IsAprroved.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
   <data name="IsAprroved.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="IsAprroved.Width" type="System.Int32, mscorlib">
+    <value>125</value>
   </data>
   <metadata name="EditButton.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1536,20 +1659,35 @@
   <data name="EditButton.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="EditButton.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="EditButton.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <metadata name="DeleteButton.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="DeleteButton.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="DeleteButton.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="DeleteButton.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="Table_post.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 67</value>
+    <value>50, 85</value>
+  </data>
+  <data name="Table_post.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Table_post.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>30</value>
   </data>
   <data name="Table_post.Size" type="System.Drawing.Size, System.Drawing">
-    <value>944, 438</value>
+    <value>1214, 555</value>
   </data>
   <data name="Table_post.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1585,10 +1723,13 @@
 </value>
   </data>
   <data name="Btnsettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>941, 15</value>
+    <value>1210, 19</value>
+  </data>
+  <data name="Btnsettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Btnsettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 42</value>
+    <value>54, 53</value>
   </data>
   <data name="Btnsettings.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -5851,10 +5992,13 @@
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-5, -8</value>
+    <value>-6, -10</value>
+  </data>
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1028, 578</value>
+    <value>1322, 732</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -5890,10 +6034,13 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 17</value>
+    <value>85, 22</value>
+  </data>
+  <data name="label12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 22</value>
+    <value>126, 29</value>
   </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -5917,10 +6064,13 @@
     <value>True</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 41</value>
+    <value>55, 52</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 19</value>
+    <value>188, 22</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -5959,10 +6109,13 @@
     <value>Медиа</value>
   </data>
   <data name="CheckVisibleColums.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 63</value>
+    <value>60, 80</value>
+  </data>
+  <data name="CheckVisibleColums.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="CheckVisibleColums.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 126</value>
+    <value>180, 150</value>
   </data>
   <data name="CheckVisibleColums.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -5983,10 +6136,13 @@
     <value>NoControl</value>
   </data>
   <data name="BtnSaveSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 199</value>
+    <value>48, 252</value>
+  </data>
+  <data name="BtnSaveSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BtnSaveSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 29</value>
+    <value>221, 37</value>
   </data>
   <data name="BtnSaveSettings.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6010,10 +6166,16 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="SettingsGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 142</value>
+    <value>498, 180</value>
+  </data>
+  <data name="SettingsGroup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="SettingsGroup.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="SettingsGroup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 248</value>
+    <value>319, 314</value>
   </data>
   <data name="SettingsGroup.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -6040,13 +6202,13 @@
     <value>Times New Roman, 9pt</value>
   </data>
   <data name="BtnClose_buy_wind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 14</value>
+    <value>354, 18</value>
   </data>
   <data name="BtnClose_buy_wind.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="BtnClose_buy_wind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 20</value>
+    <value>26, 25</value>
   </data>
   <data name="BtnClose_buy_wind.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -6067,10 +6229,13 @@
     <value>0</value>
   </data>
   <data name="BTN_Buy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 133</value>
+    <value>122, 168</value>
+  </data>
+  <data name="BTN_Buy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="BTN_Buy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 33</value>
+    <value>148, 42</value>
   </data>
   <data name="BTN_Buy.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -6094,10 +6259,13 @@
     <value>True</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 46</value>
+    <value>6, 58</value>
+  </data>
+  <data name="label11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 76</value>
+    <value>359, 88</value>
   </data>
   <data name="label11.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -6124,10 +6292,13 @@
     <value>True</value>
   </data>
   <data name="Hello_User.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 22</value>
+    <value>104, 28</value>
+  </data>
+  <data name="Hello_User.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="Hello_User.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 19</value>
+    <value>175, 22</value>
   </data>
   <data name="Hello_User.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -6151,10 +6322,16 @@
     <value>Times New Roman, 12pt</value>
   </data>
   <data name="Buy_Window.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 175</value>
+    <value>463, 222</value>
+  </data>
+  <data name="Buy_Window.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="Buy_Window.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="Buy_Window.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 174</value>
+    <value>391, 220</value>
   </data>
   <data name="Buy_Window.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -6178,10 +6355,10 @@
     <value>62</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+    <value>9, 19</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1016, 517</value>
+    <value>1306, 655</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Times New Roman, 9.75pt</value>
@@ -7178,6 +7355,9 @@
         Xb+uX9ev69f16/p1/bp+Xb+uX9ev69f16/p1/bp+Xb+uX9ev69f1a/L6f5oGzS+PhuEiAAAAAElFTkSu
         QmCC
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

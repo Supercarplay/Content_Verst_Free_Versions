@@ -42,7 +42,6 @@ System::Void Project::MyForm::button1_Click(System::Object^ sender, System::Even
 		button_New_post->Text = L"Закрыть окно";
 		Table_post->Enabled = false;
 		Btnsettings->Enabled = false;
-		CheckApproved->SetItemChecked(0, false);
 	}
 	else {
 		Panel_New_post->Visible = false;
@@ -52,7 +51,6 @@ System::Void Project::MyForm::button1_Click(System::Object^ sender, System::Even
 		BtnAddFiles->Text = L"Добавить файл";
 		Table_post->Enabled = true;
 		Btnsettings->Enabled = true;
-		CheckApproved->SetItemChecked(0, false);
 	}
 }
 

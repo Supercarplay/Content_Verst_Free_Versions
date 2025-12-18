@@ -31,15 +31,8 @@ System::Void Project::MyForm::MyForm_Load(System::Object^ sender, System::EventA
 
 	String^ query;
 	OleDbCommand^ command;
-	query = "SELECT [ID], [Date_post], [name_post], [About_post], [Text_post], [Scencens_post], [ViewMedia_post], [Files], [Approved] "
-		"FROM TablePost WHERE [Published] = 0 AND [Users_ID] = @UserID ORDER BY [Date_post]";
+	String^ query = "SELECT [ID], [Date_post], [name_post], [About_post], [Text_post], [Scencens_post], [ViewMedia_post], [Files] FROM TablePost ORDER BY [Date_post]";
 	command = gcnew OleDbCommand(query, DBconnection);
-	if (currentUserId.HasValue) {
-		command->Parameters->AddWithValue("@UserID", currentUserId.Value);
-	}
-	else {
-		command->Parameters->AddWithValue("@UserID", DBNull::Value);
-	}
 	OleDbDataAdapter^ adapter = gcnew OleDbDataAdapter(command);
 	DataTable^ dataTable = gcnew DataTable();
 
@@ -54,7 +47,6 @@ System::Void Project::MyForm::MyForm_Load(System::Object^ sender, System::EventA
 	Scencens_post->DataPropertyName = "Scencens_post";
 	ViewMedia_post->DataPropertyName = "ViewMedia_post";
 	Files_post->DataPropertyName = "Files";
-	IsAprroved->DataPropertyName = "Approved";
 
 	Table_post->AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode::Fill;
 	Table_post->DefaultCellStyle->WrapMode = DataGridViewTriState::True;
@@ -123,8 +115,6 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 		Object^ scencensObj = row->Cells["Scencens_post"]->Value;
 		Object^ mediaObj = row->Cells["ViewMedia_post"]->Value;
 		Object^ FileObj = row->Cells["Files_post"]->Value;
-		Object^ approvedObj = row->Cells["IsAprroved"]->Value;
-		HistoryFileEditPost = Convert::ToString(FileObj);
 
 		if (dateObj != nullptr && dateObj != DBNull::Value) {
 			DateTime postDateTime = safe_cast<DateTime>(dateObj);
@@ -153,7 +143,6 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 			linkEditFile->Text = fileName;
 			linkEditFile->Visible = true;
 			selectedFileForEditPost = fileName;
-			HistoryFileEditPost = selectedFileForEditPost;
 			DeleteEditFiles->Visible = true;
 			DeleteEditFiles->Enabled = true;
 		}
@@ -164,13 +153,6 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 			DeleteEditFiles->Visible = false;
 			DeleteEditFiles->Enabled = false;
 		}
-
-		
-		if (approvedObj != nullptr && approvedObj != DBNull::Value) {
-			bool isApproved = Convert::ToBoolean(approvedObj);
-			checkApprovedEdit->SetItemChecked(0, isApproved);
-		}
-		
 
 		if (Edit_post->Visible == false) {
 			Edit_post->Visible = true;
@@ -189,15 +171,11 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 		);
 		if (res == System::Windows::Forms::DialogResult::Yes) {
 			try {
-				String^ fileNameDelete = Convert::ToString(Table_post->Rows[e->RowIndex]->Cells["Files_post"]->Value);
-				String^ destServer = System::IO::Path::Combine(serverDir, fileNameDelete);
-				String^ deleteQuery = "DELETE FROM TablePost WHERE [ID] = @ID";
+				String^ deleteQuery = "DELETE FROM TablePost WHERE [ID] = ID";
 				OleDbCommand^ cmd = gcnew OleDbCommand(deleteQuery, DBconnection);
 				int idToDelete = Convert::ToInt32(Table_post->Rows[e->RowIndex]->Cells["ID"]->Value);
 				cmd->Parameters->AddWithValue("@ID", idToDelete);
-				if (System::IO::File::Exists(destServer)) {
-					System::IO::File::Delete(destServer);
-				}
+
 				cmd->ExecuteNonQuery();
 				MyForm_Load(this, gcnew System::EventArgs());
 			}

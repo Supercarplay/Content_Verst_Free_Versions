@@ -18,7 +18,7 @@ namespace Project {
 	public:
 		static String^ connectString =
 			"Provider=Microsoft.ACE.OLEDB.12.0;"
-			"Data Source=C:\\Путь\\К\\Базе.accdb;"
+			"Data Source=C:\\Users\\Dmitry Sherbakov\\source\\repos\\Supercarplay\\Content_Verst_Free_Versions\\Program\\Database.accdb;"
 			"Persist Security Info=False;";
 	private:
 		OleDbConnection^ DBconnection;
@@ -33,8 +33,6 @@ namespace Project {
 		String^ fileName;
 		String^ src;
 		bool Settings = false;
-	private:
-		String^ localDir = System::IO::Path::Combine(Application::StartupPath, "FilePost");
 	private: System::Windows::Forms::Label^ Name_new_post;
 	private: System::Windows::Forms::TextBox^ Textbox_Name_new_post;
 	private: System::Windows::Forms::Label^ About_new_post;
@@ -86,8 +84,6 @@ namespace Project {
 	private: System::Windows::Forms::CheckedListBox^ CheckVisibleColums;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::CheckedListBox^ CheckApproved;
-	private: System::Windows::Forms::CheckedListBox^ checkApprovedEdit;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Date_post;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ name_post;
@@ -112,7 +108,6 @@ namespace Project {
 		System::Void BtnEditFile_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void MyForm_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e);
 		System::Void MyForm_Resize(System::Object^ sender, System::EventArgs^ e);
-		System::Void Add_bot_settings_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnClose_buy_wind_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BTN_Buy_Click(System::Object^ sender, System::EventArgs^ e);
 		//Удаление файлов
@@ -121,23 +116,12 @@ namespace Project {
 		//Настройки
 		System::Void Btnsettings_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnSaveSettings_Click(System::Object^ sender, System::EventArgs^ e);
-		System::Void CheckVisibleColums_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-		System::Void checkedApproved_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-		System::Void CheckApproved_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
-		System::Void checkApprovedEdit_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	public:
 		MyForm(void)
 		{
 			InitializeComponent();
 
 			DBconnection = gcnew OleDbConnection(connectString);
-
-			ReturnArchive->Visible = false;
-
-			String^ filePostFolder = System::IO::Path::Combine(Application::StartupPath, "FilePost");
-			if (!System::IO::Directory::Exists(filePostFolder)) {
-				System::IO::Directory::CreateDirectory(filePostFolder);
-			}
 
 			this->AutoScroll = true;
 			Table_post->RowHeadersVisible = false;
@@ -210,12 +194,10 @@ namespace Project {
 			this->Generation_Continuity_new_post = (gcnew System::Windows::Forms::Button());
 			this->Save_button = (gcnew System::Windows::Forms::Button());
 			this->Panel_New_post = (gcnew System::Windows::Forms::GroupBox());
-			this->CheckApproved = (gcnew System::Windows::Forms::CheckedListBox());
 			this->DeleteFile = (gcnew System::Windows::Forms::Button());
 			this->linkFile = (gcnew System::Windows::Forms::LinkLabel());
 			this->BtnAddFiles = (gcnew System::Windows::Forms::Button());
 			this->Edit_post = (gcnew System::Windows::Forms::GroupBox());
-			this->checkApprovedEdit = (gcnew System::Windows::Forms::CheckedListBox());
 			this->ReturnArchive = (gcnew System::Windows::Forms::Label());
 			this->DeleteEditFiles = (gcnew System::Windows::Forms::Button());
 			this->linkEditFile = (gcnew System::Windows::Forms::LinkLabel());
@@ -405,7 +387,6 @@ namespace Project {
 			// Panel_New_post
 			// 
 			resources->ApplyResources(this->Panel_New_post, L"Panel_New_post");
-			this->Panel_New_post->Controls->Add(this->CheckApproved);
 			this->Panel_New_post->Controls->Add(this->DeleteFile);
 			this->Panel_New_post->Controls->Add(this->Save_button);
 			this->Panel_New_post->Controls->Add(this->Generation_Continuity_new_post);
@@ -429,17 +410,6 @@ namespace Project {
 			this->Panel_New_post->Name = L"Panel_New_post";
 			this->Panel_New_post->TabStop = false;
 			this->Panel_New_post->Tag = L"New_post";
-			// 
-			// CheckApproved
-			// 
-			this->CheckApproved->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
-				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			this->CheckApproved->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			resources->ApplyResources(this->CheckApproved, L"CheckApproved");
-			this->CheckApproved->ForeColor = System::Drawing::Color::White;
-			this->CheckApproved->Items->AddRange(gcnew cli::array< System::Object^  >(1) { resources->GetString(L"CheckApproved.Items") });
-			this->CheckApproved->Name = L"CheckApproved";
-			this->CheckApproved->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::CheckApproved_MouseUp);
 			// 
 			// DeleteFile
 			// 
@@ -468,7 +438,6 @@ namespace Project {
 			// Edit_post
 			// 
 			resources->ApplyResources(this->Edit_post, L"Edit_post");
-			this->Edit_post->Controls->Add(this->checkApprovedEdit);
 			this->Edit_post->Controls->Add(this->ReturnArchive);
 			this->Edit_post->Controls->Add(this->DeleteEditFiles);
 			this->Edit_post->Controls->Add(this->linkEditFile);
@@ -491,18 +460,6 @@ namespace Project {
 			this->Edit_post->Name = L"Edit_post";
 			this->Edit_post->TabStop = false;
 			this->Edit_post->Tag = L"Edit_post";
-			// 
-			// checkApprovedEdit
-			// 
-			this->checkApprovedEdit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
-				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			this->checkApprovedEdit->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			resources->ApplyResources(this->checkApprovedEdit, L"checkApprovedEdit");
-			this->checkApprovedEdit->ForeColor = System::Drawing::Color::White;
-			this->checkApprovedEdit->FormattingEnabled = true;
-			this->checkApprovedEdit->Items->AddRange(gcnew cli::array< System::Object^  >(1) { resources->GetString(L"checkApprovedEdit.Items") });
-			this->checkApprovedEdit->Name = L"checkApprovedEdit";
-			this->checkApprovedEdit->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::checkApprovedEdit_MouseUp);
 			// 
 			// ReturnArchive
 			// 
@@ -808,7 +765,6 @@ namespace Project {
 			resources->ApplyResources(this->CheckVisibleColums, L"CheckVisibleColums");
 			this->CheckVisibleColums->Name = L"CheckVisibleColums";
 			this->CheckVisibleColums->SelectionMode = System::Windows::Forms::SelectionMode::None;
-			this->CheckVisibleColums->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::CheckVisibleColums_MouseUp);
 			// 
 			// BtnSaveSettings
 			// 

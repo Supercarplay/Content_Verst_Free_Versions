@@ -120,15 +120,3 @@ System::Void Project::MyForm::BtnSaveSettings_Click(System::Object^ sender, Syst
 		MessageBox::Show("Ошибка сохранения настроек:\n" + ex->Message, "Ошибка", MessageBoxButtons::OK, MessageBoxIcon::Error);
 	}
 }
-
-
-//
-//	Работа CheckedListBox
-//
-System::Void Project::MyForm::CheckVisibleColums_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	int index = CheckVisibleColums->IndexFromPoint(e->Location);
-	if (index != -1) {
-		bool current = CheckVisibleColums->GetItemChecked(index);
-		CheckVisibleColums->SetItemChecked(index, !current);
-	}
-}
