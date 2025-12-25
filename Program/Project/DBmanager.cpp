@@ -29,7 +29,6 @@ System::Void Project::MyForm::MyForm_Load(System::Object^ sender, System::EventA
 		savedScrollIndex = Table_post->FirstDisplayedScrollingRowIndex;
 	}
 
-	String^ query;
 	OleDbCommand^ command;
 	String^ query = "SELECT [ID], [Date_post], [name_post], [About_post], [Text_post], [Scencens_post], [ViewMedia_post], [Files] FROM TablePost ORDER BY [Date_post]";
 	command = gcnew OleDbCommand(query, DBconnection);
@@ -59,7 +58,6 @@ System::Void Project::MyForm::MyForm_Load(System::Object^ sender, System::EventA
 		Table_post->FirstDisplayedScrollingRowIndex = savedScrollIndex;
 	}
 }
-
 
 //
 // Структура взаимодействия с кнопками удаление и редактирования и просмотр файла
@@ -171,10 +169,10 @@ System::Void Project::MyForm::Table_post_CellContentClick(System::Object^ sender
 		);
 		if (res == System::Windows::Forms::DialogResult::Yes) {
 			try {
-				String^ deleteQuery = "DELETE FROM TablePost WHERE [ID] = ID";
+				String^ deleteQuery = "DELETE FROM TablePost WHERE [ID] = ?";
 				OleDbCommand^ cmd = gcnew OleDbCommand(deleteQuery, DBconnection);
 				int idToDelete = Convert::ToInt32(Table_post->Rows[e->RowIndex]->Cells["ID"]->Value);
-				cmd->Parameters->AddWithValue("@ID", idToDelete);
+				cmd->Parameters->AddWithValue("?", idToDelete);
 
 				cmd->ExecuteNonQuery();
 				MyForm_Load(this, gcnew System::EventArgs());
