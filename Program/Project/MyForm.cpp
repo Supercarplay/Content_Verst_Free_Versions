@@ -80,5 +80,5 @@ System::Void Project::MyForm::BtnClose_buy_wind_Click(System::Object^ sender, Sy
 	Table_post->Enabled = true;
 }
 System::Void Project::MyForm::BTN_Buy_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::Diagnostics::Process::Start("https://vk.com/shcherbakovdmitrii");
+	System::Diagnostics::Process::Start("https://t.me/Content_Verst_Bot");
 }
