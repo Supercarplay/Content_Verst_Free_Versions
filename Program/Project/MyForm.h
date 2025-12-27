@@ -16,10 +16,103 @@ namespace Project {
 	{
 
 	public:
-		static String^ connectString =
-			"Provider=Microsoft.ACE.OLEDB.12.0;"
-			"Data Source=C:\\Users\\Super\\source\\repos\\Supercarplay\\Content_Verst_Free_Versions\\Program\\Database.accdb;"
-			"Persist Security Info=False;";
+		static String^ GetConnectionString() {
+			// Получаем папку, откуда запущено приложение
+			String^ appDir = System::Windows::Forms::Application::StartupPath;
+			// Формируем полный путь к файлу БД
+			String^ dbPath = System::IO::Path::Combine(appDir, "Database.accdb");
+			// Возвращаем строку подключения
+			return "Provider=Microsoft.ACE.OLEDB.12.0;"
+				"Data Source=" + dbPath + ";"
+				"Persist Security Info=False;";
+		}
+
+	private:
+		String^ GetSettingsFilePath() {
+			// Получаем папку, откуда запущено приложение
+			String^ appDir = System::Windows::Forms::Application::StartupPath;
+			String^ filePath = System::IO::Path::Combine(appDir, "settings.ini");
+
+			// Если файл не существует — создаём его с минимальным содержимым
+			if (!System::IO::File::Exists(filePath)) {
+				String^ defaultContent =
+					"[Columns]\r\n"
+					"Visible_Data=1\r\n"
+					"Visible_Name=1\r\n"
+					"Visible_About=1\r\n"
+					"Visible_Text=1\r\n"
+					"Visible_Scenes=1\r\n"
+					"Visible_Media=1\r\n";
+
+				System::IO::File::WriteAllText(filePath, defaultContent, System::Text::Encoding::UTF8);
+			}
+
+			return filePath;
+		}
+
+		void WriteIniValue(String^ section, String^ key, String^ value) {
+			String^ path = GetSettingsFilePath();
+			array<String^>^ lines = System::IO::File::ReadAllLines(path);
+			bool foundSection = false;
+			bool updated = false;
+			System::Text::StringBuilder^ sb = gcnew System::Text::StringBuilder();
+
+			for (int i = 0; i < lines->Length; i++) {
+				String^ line = lines[i]->Trim();
+				if (line->StartsWith("[") && line->EndsWith("]")) {
+					if (foundSection && !updated) {
+						sb->AppendFormat("{0}={1}\r\n", key, value);
+						updated = true;
+					}
+					foundSection = (line->Equals("[" + section + "]"));
+					sb->AppendLine(line);
+				}
+				else if (foundSection && !line->StartsWith(";") && line->Contains("=")) {
+					array<String^>^ parts = line->Split('=');
+					if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
+						sb->AppendFormat("{0}={1}\r\n", key, value);
+						updated = true;
+						continue;
+					}
+					sb->AppendLine(line);
+				}
+				else {
+					sb->AppendLine(line);
+				}
+			}
+
+			if (!updated) {
+				if (!foundSection) {
+					sb->AppendFormat("\r\n[{0}]\r\n", section);
+				}
+				sb->AppendFormat("{0}={1}\r\n", key, value);
+			}
+
+			System::IO::File::WriteAllText(path, sb->ToString());
+		}
+
+		String^ ReadIniValue(String^ section, String^ key, String^ defaultValue) {
+			try {
+				String^ path = GetSettingsFilePath();
+				array<String^>^ lines = System::IO::File::ReadAllLines(path);
+				bool inSection = false;
+
+				for each(String ^ line in lines) {
+					String^ trimmed = line->Trim();
+					if (trimmed->StartsWith("[") && trimmed->EndsWith("]")) {
+						inSection = (trimmed->Equals("[" + section + "]"));
+					}
+					else if (inSection && trimmed->Contains("=") && !trimmed->StartsWith(";")) {
+						array<String^>^ parts = trimmed->Split('=');
+						if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
+							return parts[1]->Trim();
+						}
+					}
+				}
+			}
+			catch (...) {}
+			return defaultValue;
+		}
 	private:
 		OleDbConnection^ DBconnection;
 		int currentEditPostID;
@@ -110,107 +203,18 @@ namespace Project {
 		System::Void MyForm_Resize(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnClose_buy_wind_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BTN_Buy_Click(System::Object^ sender, System::EventArgs^ e);
-		System::Void CheckVisibleColums_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 		//Удаление файлов
 		System::Void DeleteFile_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void DeleteEditFiles_Click(System::Object^ sender, System::EventArgs^ e);
 		//Настройки
 		System::Void Btnsettings_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnSaveSettings_Click(System::Object^ sender, System::EventArgs^ e);
-	private:
-		String^ GetSettingsFilePath() {
-			// Получаем путь к файлу
-			String^ appData = Environment::GetFolderPath(Environment::SpecialFolder::ApplicationData);
-			String^ configDir = System::IO::Path::Combine(appData, "ContentVerst");
-			System::IO::Directory::CreateDirectory(configDir); // Создаём папку, если нет
-			String^ filePath = System::IO::Path::Combine(configDir, "settings.ini");
-
-			// Если файл не существует — создаём его с минимальным содержимым
-			if (!System::IO::File::Exists(filePath)) {
-				// Создаём базовый INI-файл с секцией [Columns] и значениями по умолчанию
-				String^ defaultContent =
-					"[Columns]\r\n"
-					"Visible_Data=1\r\n"
-					"Visible_Name=1\r\n"
-					"Visible_About=1\r\n"
-					"Visible_Text=1\r\n"
-					"Visible_Scences=1\r\n"
-					"Visible_Media=1\r\n";
-
-				System::IO::File::WriteAllText(filePath, defaultContent, System::Text::Encoding::UTF8);
-			}
-
-			return filePath;
-		}
-
-		void WriteIniValue(String^ section, String^ key, String^ value) {
-			String^ path = GetSettingsFilePath();
-			array<String^>^ lines = System::IO::File::ReadAllLines(path);
-			bool foundSection = false;
-			bool updated = false;
-			System::Text::StringBuilder^ sb = gcnew System::Text::StringBuilder();
-
-			for (int i = 0; i < lines->Length; i++) {
-				String^ line = lines[i]->Trim();
-				if (line->StartsWith("[") && line->EndsWith("]")) {
-					if (foundSection && !updated) {
-						sb->AppendFormat("{0}={1}\r\n", key, value);
-						updated = true;
-					}
-					foundSection = (line->Equals("[" + section + "]"));
-					sb->AppendLine(line);
-				}
-				else if (foundSection && !line->StartsWith(";") && line->Contains("=")) {
-					array<String^>^ parts = line->Split('=');
-					if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
-						sb->AppendFormat("{0}={1}\r\n", key, value);
-						updated = true;
-						continue;
-					}
-					sb->AppendLine(line);
-				}
-				else {
-					sb->AppendLine(line);
-				}
-			}
-
-			if (!updated) {
-				if (!foundSection) {
-					sb->AppendFormat("\r\n[{0}]\r\n", section);
-				}
-				sb->AppendFormat("{0}={1}\r\n", key, value);
-			}
-
-			System::IO::File::WriteAllText(path, sb->ToString());
-		}
-
-		String^ ReadIniValue(String^ section, String^ key, String^ defaultValue) {
-			try {
-				String^ path = GetSettingsFilePath();
-				array<String^>^ lines = System::IO::File::ReadAllLines(path);
-				bool inSection = false;
-
-				for each (String ^ line in lines) {
-					String^ trimmed = line->Trim();
-					if (trimmed->StartsWith("[") && trimmed->EndsWith("]")) {
-						inSection = (trimmed->Equals("[" + section + "]"));
-					}
-					else if (inSection && trimmed->Contains("=") && !trimmed->StartsWith(";")) {
-						array<String^>^ parts = trimmed->Split('=');
-						if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
-							return parts[1]->Trim();
-						}
-					}
-				}
-			}
-			catch (...) {}
-			return defaultValue;
-		}
+		System::Void CheckVisibleColums_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 	public:
 		MyForm(void)
 		{
 			InitializeComponent();
-
+			String^ connectString = MyForm::GetConnectionString();
 			DBconnection = gcnew OleDbConnection(connectString);
 
 			this->AutoScroll = true;

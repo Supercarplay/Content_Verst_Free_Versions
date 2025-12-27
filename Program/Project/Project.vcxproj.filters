@@ -38,5 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Database.accdb" />
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
