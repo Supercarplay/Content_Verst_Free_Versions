@@ -18,7 +18,7 @@ namespace Project {
 	public:
 		static String^ connectString =
 			"Provider=Microsoft.ACE.OLEDB.12.0;"
-			"Data Source=C:\\Users\\Dmitry Sherbakov\\source\\repos\\Supercarplay\\Content_Verst_Free_Versions\\Program\\Database.accdb;"
+			"Data Source=C:\\Users\\Super\\source\\repos\\Supercarplay\\Content_Verst_Free_Versions\\Program\\Database.accdb;"
 			"Persist Security Info=False;";
 	private:
 		OleDbConnection^ DBconnection;
@@ -110,12 +110,102 @@ namespace Project {
 		System::Void MyForm_Resize(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnClose_buy_wind_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BTN_Buy_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void CheckVisibleColums_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e);
 		//Удаление файлов
 		System::Void DeleteFile_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void DeleteEditFiles_Click(System::Object^ sender, System::EventArgs^ e);
 		//Настройки
 		System::Void Btnsettings_Click(System::Object^ sender, System::EventArgs^ e);
 		System::Void BtnSaveSettings_Click(System::Object^ sender, System::EventArgs^ e);
+	private:
+		String^ GetSettingsFilePath() {
+			// Получаем путь к файлу
+			String^ appData = Environment::GetFolderPath(Environment::SpecialFolder::ApplicationData);
+			String^ configDir = System::IO::Path::Combine(appData, "ContentVerst");
+			System::IO::Directory::CreateDirectory(configDir); // Создаём папку, если нет
+			String^ filePath = System::IO::Path::Combine(configDir, "settings.ini");
+
+			// Если файл не существует — создаём его с минимальным содержимым
+			if (!System::IO::File::Exists(filePath)) {
+				// Создаём базовый INI-файл с секцией [Columns] и значениями по умолчанию
+				String^ defaultContent =
+					"[Columns]\r\n"
+					"Visible_Data=1\r\n"
+					"Visible_Name=1\r\n"
+					"Visible_About=1\r\n"
+					"Visible_Text=1\r\n"
+					"Visible_Scences=1\r\n"
+					"Visible_Media=1\r\n";
+
+				System::IO::File::WriteAllText(filePath, defaultContent, System::Text::Encoding::UTF8);
+			}
+
+			return filePath;
+		}
+
+		void WriteIniValue(String^ section, String^ key, String^ value) {
+			String^ path = GetSettingsFilePath();
+			array<String^>^ lines = System::IO::File::ReadAllLines(path);
+			bool foundSection = false;
+			bool updated = false;
+			System::Text::StringBuilder^ sb = gcnew System::Text::StringBuilder();
+
+			for (int i = 0; i < lines->Length; i++) {
+				String^ line = lines[i]->Trim();
+				if (line->StartsWith("[") && line->EndsWith("]")) {
+					if (foundSection && !updated) {
+						sb->AppendFormat("{0}={1}\r\n", key, value);
+						updated = true;
+					}
+					foundSection = (line->Equals("[" + section + "]"));
+					sb->AppendLine(line);
+				}
+				else if (foundSection && !line->StartsWith(";") && line->Contains("=")) {
+					array<String^>^ parts = line->Split('=');
+					if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
+						sb->AppendFormat("{0}={1}\r\n", key, value);
+						updated = true;
+						continue;
+					}
+					sb->AppendLine(line);
+				}
+				else {
+					sb->AppendLine(line);
+				}
+			}
+
+			if (!updated) {
+				if (!foundSection) {
+					sb->AppendFormat("\r\n[{0}]\r\n", section);
+				}
+				sb->AppendFormat("{0}={1}\r\n", key, value);
+			}
+
+			System::IO::File::WriteAllText(path, sb->ToString());
+		}
+
+		String^ ReadIniValue(String^ section, String^ key, String^ defaultValue) {
+			try {
+				String^ path = GetSettingsFilePath();
+				array<String^>^ lines = System::IO::File::ReadAllLines(path);
+				bool inSection = false;
+
+				for each (String ^ line in lines) {
+					String^ trimmed = line->Trim();
+					if (trimmed->StartsWith("[") && trimmed->EndsWith("]")) {
+						inSection = (trimmed->Equals("[" + section + "]"));
+					}
+					else if (inSection && trimmed->Contains("=") && !trimmed->StartsWith(";")) {
+						array<String^>^ parts = trimmed->Split('=');
+						if (parts->Length >= 2 && parts[0]->Trim()->Equals(key, StringComparison::OrdinalIgnoreCase)) {
+							return parts[1]->Trim();
+						}
+					}
+				}
+			}
+			catch (...) {}
+			return defaultValue;
+		}
 	public:
 		MyForm(void)
 		{
@@ -137,6 +227,7 @@ namespace Project {
 				Application::Exit();
 				return;
 			}
+			LoadSettings();
 		}
 	protected:
 		/// <summary>
@@ -172,9 +263,9 @@ namespace Project {
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->button_New_post = (gcnew System::Windows::Forms::Button());
 			this->Name_new_post = (gcnew System::Windows::Forms::Label());
 			this->Textbox_Name_new_post = (gcnew System::Windows::Forms::TextBox());
@@ -598,37 +689,37 @@ namespace Project {
 			this->Table_post->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(67)),
 				static_cast<System::Int32>(static_cast<System::Byte>(93)));
 			this->Table_post->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
+			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
 				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle1->Padding = System::Windows::Forms::Padding(5);
-			dataGridViewCellStyle1->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F));
+			dataGridViewCellStyle4->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle4->Padding = System::Windows::Forms::Padding(5);
+			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			dataGridViewCellStyle1->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle1->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->Table_post->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->Table_post->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
 			this->Table_post->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
 				this->ID, this->Date_post,
 					this->name_post, this->About_post, this->Text_post, this->Scencens_post, this->ViewMedia_post, this->Files_post, this->IsAprroved,
 					this->EditButton, this->DeleteButton
 			});
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleLeft;
+			dataGridViewCellStyle5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(33)),
 				static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Times New Roman", 9.75F));
+			dataGridViewCellStyle5->ForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle5->SelectionBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(33)), static_cast<System::Int32>(static_cast<System::Byte>(71)));
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
-			this->Table_post->DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle5->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle5->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
+			this->Table_post->DefaultCellStyle = dataGridViewCellStyle5;
 			this->Table_post->GridColor = System::Drawing::Color::Black;
 			this->Table_post->Name = L"Table_post";
 			this->Table_post->ReadOnly = true;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10));
-			this->Table_post->RowsDefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10));
+			this->Table_post->RowsDefaultCellStyle = dataGridViewCellStyle6;
 			this->Table_post->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::Table_post_CellContentClick);
 			// 
 			// ID
@@ -765,6 +856,7 @@ namespace Project {
 			resources->ApplyResources(this->CheckVisibleColums, L"CheckVisibleColums");
 			this->CheckVisibleColums->Name = L"CheckVisibleColums";
 			this->CheckVisibleColums->SelectionMode = System::Windows::Forms::SelectionMode::None;
+			this->CheckVisibleColums->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &MyForm::CheckVisibleColums_MouseUp);
 			// 
 			// BtnSaveSettings
 			// 

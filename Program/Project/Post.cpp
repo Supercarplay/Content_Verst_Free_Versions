@@ -40,8 +40,8 @@ System::Void Project::MyForm::Save_button_Click(System::Object^ sender, System::
 			: safe_cast<Object^>(Swith_view_media->Text);
 		cmd->Parameters->AddWithValue("ViewMedia_post", mediaValue);
 
-		Object^ filesValue = src
-			? safe_cast<Object^>(src)
+		Object^ filesValue = selectedFileForNewPost
+			? safe_cast<Object^>(selectedFileForNewPost)
 			: static_cast<Object^>(DBNull::Value);
 		cmd->Parameters->AddWithValue("Files", filesValue);
 
@@ -91,7 +91,6 @@ System::Void Project::MyForm::Save_editbutton_Click(System::Object^ sender, Syst
 		OleDbCommand^ cmd = gcnew OleDbCommand(updateQuery, DBconnection);
 		DateTime selectedDate = dateTimePicker_Editpost->Value;
 		DateTime selectedTime = TimePicker_Editpost->Value;
-
 		DateTime combinedDateTime = selectedDate.Date + selectedTime.TimeOfDay;
 		cmd->Parameters->AddWithValue("Date_post", combinedDateTime);
 		cmd->Parameters->AddWithValue("name_post", Name_Edit_post->Text);
@@ -111,8 +110,8 @@ System::Void Project::MyForm::Save_editbutton_Click(System::Object^ sender, Syst
 			? static_cast<Object^>(DBNull::Value)
 			: safe_cast<Object^>(View_media_Edit->Text);
 		cmd->Parameters->AddWithValue("ViewMedia_post", mediaValue);
-		Object^ filesValue = src
-			? safe_cast<Object^>(src)
+		Object^ filesValue = selectedFileForEditPost
+			? safe_cast<Object^>(selectedFileForEditPost)
 			: static_cast<Object^>(DBNull::Value);
 		cmd->Parameters->AddWithValue("Files", filesValue);
 		cmd->Parameters->AddWithValue("ID", currentEditPostID);
@@ -151,6 +150,7 @@ System::Void Project::MyForm::BtnAddFiles_Click(System::Object^ sender, System::
 	if (openFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		try {
 			src = openFileDialog->FileName;
+			selectedFileForNewPost = src;
 			fileName = System::IO::Path::GetFileName(src);
 			linkFile->Text = fileName;
 			linkFile->Visible = true;
@@ -167,6 +167,7 @@ System::Void Project::MyForm::BtnEditFile_Click(System::Object^ sender, System::
 	if (openFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 		try {
 			src = openFileDialog->FileName;
+			selectedFileForEditPost = src;
 			fileName = System::IO::Path::GetFileName(src);
 			linkEditFile->Text = fileName;
 			linkEditFile->Visible = true;
