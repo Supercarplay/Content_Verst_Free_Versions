@@ -45,7 +45,7 @@
 
 ## 📬 Поддержка
 
-Если возникли вопросы или ошибки — создайте issue в репозитории или напишите в личные сообщения [Telegram](https://t.me/Mityao_player).
+Если возникли вопросы или ошибки — создайте issue в репозитории или напишите в личные сообщения [Telegram](https://telegram.me/MityaoVibe).
 
 ---
 
@@ -55,4 +55,4 @@
 
 ---
 
-© 2025 Scherbakov Dmitry
+© 2025 Shcherbakov Dmitry
